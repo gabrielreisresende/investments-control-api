@@ -1,6 +1,6 @@
 package com.resendegabriel.investmentscontrolapi.batch;
 
-import com.resendegabriel.investmentscontrolapi.entity.Stock;
+import com.resendegabriel.investmentscontrolapi.model.Stock;
 import com.resendegabriel.investmentscontrolapi.repository.StockRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.Chunk;

@@ -2,7 +2,7 @@ package com.resendegabriel.investmentscontrolapi.config;
 
 import com.resendegabriel.investmentscontrolapi.batch.RestStockReader;
 import com.resendegabriel.investmentscontrolapi.batch.StockWriter;
-import com.resendegabriel.investmentscontrolapi.entity.Stock;
+import com.resendegabriel.investmentscontrolapi.model.Stock;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepScope;

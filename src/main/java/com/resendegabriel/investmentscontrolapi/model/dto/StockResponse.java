@@ -1,6 +1,6 @@
-package com.resendegabriel.investmentscontrolapi.entity.dto;
+package com.resendegabriel.investmentscontrolapi.model.dto;
 
-import com.resendegabriel.investmentscontrolapi.entity.Stock;
+import com.resendegabriel.investmentscontrolapi.model.Stock;
 import lombok.Builder;
 
 import java.math.BigDecimal;

@@ -1,7 +1,7 @@
 package com.resendegabriel.investmentscontrolapi.batch;
 
 import com.resendegabriel.investmentscontrolapi.batch.dto.ApiResponse;
-import com.resendegabriel.investmentscontrolapi.entity.Stock;
+import com.resendegabriel.investmentscontrolapi.model.Stock;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.ItemReader;

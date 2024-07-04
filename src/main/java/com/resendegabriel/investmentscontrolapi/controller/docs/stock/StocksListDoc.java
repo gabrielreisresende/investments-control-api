@@ -1,6 +1,6 @@
-package com.resendegabriel.investmentscontrolapi.controller.docs;
+package com.resendegabriel.investmentscontrolapi.controller.docs.stock;
 
-import com.resendegabriel.investmentscontrolapi.entity.dto.StockResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.StockResponse;
 import com.resendegabriel.investmentscontrolapi.exception.StandardError;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
