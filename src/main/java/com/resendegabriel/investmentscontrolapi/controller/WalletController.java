@@ -1,5 +1,9 @@
 package com.resendegabriel.investmentscontrolapi.controller;
 
+import com.resendegabriel.investmentscontrolapi.controller.docs.wallet.DeleteWalletDoc;
+import com.resendegabriel.investmentscontrolapi.controller.docs.wallet.GetWalletDoc;
+import com.resendegabriel.investmentscontrolapi.controller.docs.wallet.WalletCreationDoc;
+import com.resendegabriel.investmentscontrolapi.controller.docs.wallet.WalletUpdateDoc;
 import com.resendegabriel.investmentscontrolapi.model.dto.WalletRequest;
 import com.resendegabriel.investmentscontrolapi.model.dto.WalletResponse;
 import com.resendegabriel.investmentscontrolapi.service.WalletService;
@@ -25,6 +29,7 @@ public class WalletController {
     @Autowired
     private WalletService walletService;
 
+    @WalletCreationDoc
     @PostMapping
     public ResponseEntity<WalletResponse> create(@RequestBody @Valid WalletRequest walletRequest) {
         log.info("[POST - CREATE WALLET] - start");
@@ -33,6 +38,7 @@ public class WalletController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+    @WalletUpdateDoc
     @PutMapping("/{id}")
     public ResponseEntity<WalletResponse> updateData(@PathVariable Long id, @RequestBody WalletRequest walletRequest) {
         log.info("[PÚT - UPDATE WALLET] - start");
@@ -41,6 +47,7 @@ public class WalletController {
         return ResponseEntity.ok().body(response);
     }
 
+    @GetWalletDoc
     @GetMapping("/{id}")
     public ResponseEntity<WalletResponse> getById(@PathVariable Long id) {
         log.info("[GET - WALLET] - start");
@@ -49,6 +56,8 @@ public class WalletController {
         return ResponseEntity.ok().body(response);
     }
 
+
+    @DeleteWalletDoc
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable Long id) {
         log.info("[DELETE - WALLET] - start");
