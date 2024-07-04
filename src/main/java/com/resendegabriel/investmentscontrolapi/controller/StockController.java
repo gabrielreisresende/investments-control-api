@@ -1,9 +1,9 @@
 package com.resendegabriel.investmentscontrolapi.controller;
 
-import com.resendegabriel.investmentscontrolapi.controller.docs.StockByCodeDoc;
-import com.resendegabriel.investmentscontrolapi.controller.docs.StocksListDoc;
-import com.resendegabriel.investmentscontrolapi.entity.Stock;
-import com.resendegabriel.investmentscontrolapi.entity.dto.StockResponse;
+import com.resendegabriel.investmentscontrolapi.controller.docs.stock.StockByCodeDoc;
+import com.resendegabriel.investmentscontrolapi.controller.docs.stock.StocksListDoc;
+import com.resendegabriel.investmentscontrolapi.model.Stock;
+import com.resendegabriel.investmentscontrolapi.model.dto.StockResponse;
 import com.resendegabriel.investmentscontrolapi.service.StockService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

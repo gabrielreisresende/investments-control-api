@@ -1,7 +1,6 @@
 package com.resendegabriel.investmentscontrolapi.model.dto;
 
 import com.resendegabriel.investmentscontrolapi.model.FixedAsset;
-import com.resendegabriel.investmentscontrolapi.model.VariableAsset;
 import com.resendegabriel.investmentscontrolapi.model.Wallet;
 import lombok.Builder;
 
@@ -12,7 +11,7 @@ public record WalletResponse(Long id,
 
                              String name,
 
-                             List<VariableAsset> variableAssets,
+                             List<VariableAssetResponse> variableAssets,
 
                              List<FixedAsset> fixedAssets) {
 
@@ -20,7 +19,7 @@ public record WalletResponse(Long id,
         return WalletResponse.builder()
                 .id(entity.getId())
                 .name(entity.getName())
-                .variableAssets(entity.getVariableAssets())
+                .variableAssets(VariableAssetResponse.fromEntityList(entity.getVariableAssets()))
                 .fixedAssets(entity.getFixedAssets())
                 .build();
     }
