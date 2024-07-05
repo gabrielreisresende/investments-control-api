@@ -14,7 +14,9 @@ public record VariableAssetResponse(Integer quantity,
 
                                     BigDecimal totalValue,
 
-                                    String assetCode
+                                    String assetCode,
+
+                                    Long walletId
 ) {
 
     public static VariableAssetResponse fromEntity(VariableAsset entity) {
@@ -23,6 +25,7 @@ public record VariableAssetResponse(Integer quantity,
                 .averageValue(entity.getAverageValue())
                 .totalValue(entity.getTotalValue())
                 .assetCode(entity.getStock().getCode())
+                .walletId(entity.getWallet().getId())
                 .build();
     }
 

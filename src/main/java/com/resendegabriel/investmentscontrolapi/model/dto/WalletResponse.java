@@ -3,6 +3,7 @@ package com.resendegabriel.investmentscontrolapi.model.dto;
 import com.resendegabriel.investmentscontrolapi.model.Wallet;
 import lombok.Builder;
 
+import java.util.Collections;
 import java.util.List;
 
 @Builder
@@ -18,8 +19,10 @@ public record WalletResponse(Long id,
         return WalletResponse.builder()
                 .id(entity.getId())
                 .name(entity.getName())
-                .variableAssets(VariableAssetResponse.fromEntityList(entity.getVariableAssets()))
-                .fixedAssets(FixedAssetResponse.fromEntityList(entity.getFixedAssets()))
+                .variableAssets(VariableAssetResponse.fromEntityList(
+                        entity.getVariableAssets() != null ? entity.getVariableAssets() : Collections.emptyList()))
+                .fixedAssets(FixedAssetResponse.fromEntityList(
+                        entity.getFixedAssets() != null ? entity.getFixedAssets() : Collections.emptyList()))
                 .build();
     }
 }

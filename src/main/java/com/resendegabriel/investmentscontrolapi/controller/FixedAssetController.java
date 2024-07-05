@@ -1,5 +1,9 @@
 package com.resendegabriel.investmentscontrolapi.controller;
 
+import com.resendegabriel.investmentscontrolapi.controller.docs.fixedAsset.AddFixedAssetToWalletDoc;
+import com.resendegabriel.investmentscontrolapi.controller.docs.fixedAsset.DeleteFixedAssetDoc;
+import com.resendegabriel.investmentscontrolapi.controller.docs.fixedAsset.GetFixedAssetDoc;
+import com.resendegabriel.investmentscontrolapi.controller.docs.fixedAsset.UpdateFixedAssetDoc;
 import com.resendegabriel.investmentscontrolapi.model.dto.FixedAssetRequest;
 import com.resendegabriel.investmentscontrolapi.model.dto.FixedAssetResponse;
 import com.resendegabriel.investmentscontrolapi.model.dto.FixedAssetUpdate;
@@ -26,6 +30,7 @@ public class FixedAssetController {
     @Autowired
     private FixedAssetService fixedAssetService;
 
+    @AddFixedAssetToWalletDoc
     @PostMapping
     public ResponseEntity<FixedAssetResponse> addFixedAssetToWallet(@RequestBody @Valid FixedAssetRequest fixedAssetRequest) {
         log.info("[POST - FIXED ASSET] - start");
@@ -34,6 +39,7 @@ public class FixedAssetController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+    @UpdateFixedAssetDoc
     @PutMapping("/{assetId}")
     public ResponseEntity<FixedAssetResponse> updateFixedAsset(@PathVariable Long assetId, @RequestBody FixedAssetUpdate fixedAssetUpdate) {
         log.info("[PUT - FIXED ASSET] - start");
@@ -42,6 +48,7 @@ public class FixedAssetController {
         return ResponseEntity.ok().body(response);
     }
 
+    @GetFixedAssetDoc
     @GetMapping("/{assetId}")
     public ResponseEntity<FixedAssetResponse> getById(@PathVariable Long assetId) {
         log.info("[GET - FIXED ASSET] - start");
@@ -50,6 +57,7 @@ public class FixedAssetController {
         return ResponseEntity.ok().body(response);
     }
 
+    @DeleteFixedAssetDoc
     @DeleteMapping("/{assetId}")
     public ResponseEntity<Void> deleteById(@PathVariable Long assetId) {
         log.info("[DELETE - FIXED ASSET] - start");
