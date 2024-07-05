@@ -1,6 +1,7 @@
 package com.resendegabriel.investmentscontrolapi.model;
 
 import com.resendegabriel.investmentscontrolapi.model.dto.WalletRequest;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,10 +32,10 @@ public class Wallet {
 
     private String name;
 
-    @OneToMany(mappedBy = "wallet")
+    @OneToMany(mappedBy = "wallet", cascade = CascadeType.REMOVE)
     List<VariableAsset> variableAssets;
 
-    @OneToMany(mappedBy = "wallet")
+    @OneToMany(mappedBy = "wallet", cascade = CascadeType.REMOVE)
     List<FixedAsset> fixedAssets;
 
     public static Wallet fromRequest(WalletRequest walletRequest) {
