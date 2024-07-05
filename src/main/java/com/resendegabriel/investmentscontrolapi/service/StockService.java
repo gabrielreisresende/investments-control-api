@@ -1,7 +1,7 @@
 package com.resendegabriel.investmentscontrolapi.service;
 
-import com.resendegabriel.investmentscontrolapi.entity.Stock;
-import com.resendegabriel.investmentscontrolapi.entity.dto.StockResponse;
+import com.resendegabriel.investmentscontrolapi.model.Stock;
+import com.resendegabriel.investmentscontrolapi.model.dto.StockResponse;
 import com.resendegabriel.investmentscontrolapi.repository.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

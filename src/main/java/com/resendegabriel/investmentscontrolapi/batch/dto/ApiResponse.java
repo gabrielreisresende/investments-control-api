@@ -1,6 +1,6 @@
 package com.resendegabriel.investmentscontrolapi.batch.dto;
 
-import com.resendegabriel.investmentscontrolapi.entity.Stock;
+import com.resendegabriel.investmentscontrolapi.model.Stock;
 import lombok.Getter;
 import lombok.Setter;
 

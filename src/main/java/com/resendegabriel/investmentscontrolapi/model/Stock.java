@@ -1,4 +1,4 @@
-package com.resendegabriel.investmentscontrolapi.entity;
+package com.resendegabriel.investmentscontrolapi.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;

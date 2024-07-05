@@ -1,7 +1,7 @@
-package com.resendegabriel.investmentscontrolapi.controller.docs;
+package com.resendegabriel.investmentscontrolapi.controller.docs.fixedAsset;
 
-import com.resendegabriel.investmentscontrolapi.entity.dto.StockResponse;
 import com.resendegabriel.investmentscontrolapi.exception.StandardError;
+import com.resendegabriel.investmentscontrolapi.model.dto.StockResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -18,12 +18,12 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Operation(
-        summary = "Retorna os dados de um determinado ativo.",
-        description = "Esse retorno contêm os dados do ativo passado como parâmetro por meio de seu código.")
+        summary = "Busca um ativo de renda fixa",
+        description = "Busca um ativo de renda fixa pelo seu id")
 @ApiResponses(value = {
         @ApiResponse(
                 responseCode = "200",
-                description = "Retorna o ativo procurado.",
+                description = "Retorna os dados de um ativo de renda fixa",
                 content = @Content(
                         mediaType = "application/json",
                         array = @ArraySchema(schema = @Schema(implementation = StockResponse.class)))),
@@ -46,5 +46,5 @@ import java.lang.annotation.Target;
                         mediaType = "application/json",
                         schema = @Schema(implementation = StandardError.class)))
 })
-public @interface StockByCodeDoc {
+public @interface GetFixedAssetDoc {
 }

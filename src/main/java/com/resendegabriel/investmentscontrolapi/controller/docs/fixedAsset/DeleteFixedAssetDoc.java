@@ -1,7 +1,7 @@
-package com.resendegabriel.investmentscontrolapi.controller.docs;
+package com.resendegabriel.investmentscontrolapi.controller.docs.fixedAsset;
 
-import com.resendegabriel.investmentscontrolapi.entity.dto.StockResponse;
 import com.resendegabriel.investmentscontrolapi.exception.StandardError;
+import com.resendegabriel.investmentscontrolapi.model.dto.StockResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -18,10 +18,12 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Operation(
-        summary = "Retorna uma lista com todos os ativos disponíveis.",
-        description = "Esse retorno contêm os ativos dos seguitens tipos: Ações, Fundos Imobilários e BDRs. Podem ser aplciados filtros de tipos de ativos(fund, stock ou bdr) e também por setor de cada ativo.")
+        summary = "Deleta um ativo de renda fixa",
+        description = "Deleta um ativo de renda fixa pelo seu id")
 @ApiResponses(value = {
-        @ApiResponse(responseCode = "200", description = "Retorna a lista de ativos.",
+        @ApiResponse(
+                responseCode = "204",
+                description = "Ativo deletado com sucesso",
                 content = @Content(
                         mediaType = "application/json",
                         array = @ArraySchema(schema = @Schema(implementation = StockResponse.class)))),
@@ -44,5 +46,5 @@ import java.lang.annotation.Target;
                         mediaType = "application/json",
                         schema = @Schema(implementation = StandardError.class)))
 })
-public @interface StocksListDoc {
+public @interface DeleteFixedAssetDoc {
 }
