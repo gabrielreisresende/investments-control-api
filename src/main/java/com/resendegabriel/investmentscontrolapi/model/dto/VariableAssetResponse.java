@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Builder
-public record VariableAssetResponse(Integer quantity,
+public record VariableAssetResponse(Long id,
+
+                                    Integer quantity,
 
                                     BigDecimal averageValue,
 
@@ -21,6 +23,7 @@ public record VariableAssetResponse(Integer quantity,
 
     public static VariableAssetResponse fromEntity(VariableAsset entity) {
         return VariableAssetResponse.builder()
+                .id(entity.getId())
                 .quantity(entity.getQuantity())
                 .averageValue(entity.getAverageValue())
                 .totalValue(entity.getTotalValue())

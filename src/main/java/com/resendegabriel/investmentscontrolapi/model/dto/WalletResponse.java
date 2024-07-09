@@ -1,5 +1,6 @@
 package com.resendegabriel.investmentscontrolapi.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.resendegabriel.investmentscontrolapi.model.Wallet;
 import lombok.Builder;
 
@@ -11,8 +12,10 @@ public record WalletResponse(Long id,
 
                              String name,
 
+                             @JsonIgnoreProperties(value = {"walletId"})
                              List<VariableAssetResponse> variableAssets,
 
+                             @JsonIgnoreProperties(value = {"walletId"})
                              List<FixedAssetResponse> fixedAssets) {
 
     public static WalletResponse fromEntity(Wallet entity) {

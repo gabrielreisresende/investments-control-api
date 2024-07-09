@@ -49,7 +49,7 @@ public class VariableAsset {
     @ManyToOne(cascade = {CascadeType.PERSIST})
     private Wallet wallet;
 
-    @OneToMany(mappedBy = "variableAsset")
+    @OneToMany(mappedBy = "variableAsset", cascade = CascadeType.REMOVE)
     private List<Dividend> dividends;
 
     @PostPersist
