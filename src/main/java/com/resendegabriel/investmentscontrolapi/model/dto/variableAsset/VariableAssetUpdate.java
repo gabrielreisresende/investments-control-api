@@ -1,4 +1,4 @@
-package com.resendegabriel.investmentscontrolapi.model.dto;
+package com.resendegabriel.investmentscontrolapi.model.dto.variableAsset;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;

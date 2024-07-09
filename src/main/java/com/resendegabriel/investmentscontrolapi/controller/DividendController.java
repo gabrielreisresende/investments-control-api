@@ -1,8 +1,8 @@
 package com.resendegabriel.investmentscontrolapi.controller;
 
-import com.resendegabriel.investmentscontrolapi.model.dto.DividendRequest;
-import com.resendegabriel.investmentscontrolapi.model.dto.DividendResponse;
-import com.resendegabriel.investmentscontrolapi.model.dto.DividendUpdate;
+import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendUpdate;
 import com.resendegabriel.investmentscontrolapi.service.DividendService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;

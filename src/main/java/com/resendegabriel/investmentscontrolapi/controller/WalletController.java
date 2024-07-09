@@ -4,8 +4,8 @@ import com.resendegabriel.investmentscontrolapi.controller.docs.wallet.DeleteWal
 import com.resendegabriel.investmentscontrolapi.controller.docs.wallet.GetWalletDoc;
 import com.resendegabriel.investmentscontrolapi.controller.docs.wallet.WalletCreationDoc;
 import com.resendegabriel.investmentscontrolapi.controller.docs.wallet.WalletUpdateDoc;
-import com.resendegabriel.investmentscontrolapi.model.dto.WalletRequest;
-import com.resendegabriel.investmentscontrolapi.model.dto.WalletResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.wallet.WalletRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.wallet.WalletResponse;
 import com.resendegabriel.investmentscontrolapi.service.WalletService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;

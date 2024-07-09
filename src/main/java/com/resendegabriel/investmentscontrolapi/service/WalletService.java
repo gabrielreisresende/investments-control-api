@@ -1,8 +1,8 @@
 package com.resendegabriel.investmentscontrolapi.service;
 
 import com.resendegabriel.investmentscontrolapi.model.Wallet;
-import com.resendegabriel.investmentscontrolapi.model.dto.WalletRequest;
-import com.resendegabriel.investmentscontrolapi.model.dto.WalletResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.wallet.WalletRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.wallet.WalletResponse;
 import com.resendegabriel.investmentscontrolapi.repository.WalletRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

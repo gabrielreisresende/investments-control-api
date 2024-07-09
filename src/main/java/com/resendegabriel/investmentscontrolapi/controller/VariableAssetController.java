@@ -4,9 +4,9 @@ import com.resendegabriel.investmentscontrolapi.controller.docs.variableAsset.Ad
 import com.resendegabriel.investmentscontrolapi.controller.docs.variableAsset.DeleteVariableAssetDoc;
 import com.resendegabriel.investmentscontrolapi.controller.docs.variableAsset.GetVariableAssetDoc;
 import com.resendegabriel.investmentscontrolapi.controller.docs.variableAsset.UpdateVariableAssetDoc;
-import com.resendegabriel.investmentscontrolapi.model.dto.VariableAssetRequest;
-import com.resendegabriel.investmentscontrolapi.model.dto.VariableAssetResponse;
-import com.resendegabriel.investmentscontrolapi.model.dto.VariableAssetUpdate;
+import com.resendegabriel.investmentscontrolapi.model.dto.variableAsset.VariableAssetRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.variableAsset.VariableAssetResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.variableAsset.VariableAssetUpdate;
 import com.resendegabriel.investmentscontrolapi.service.VariableAssetService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;

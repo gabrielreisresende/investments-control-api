@@ -1,9 +1,9 @@
 package com.resendegabriel.investmentscontrolapi.service;
 
 import com.resendegabriel.investmentscontrolapi.model.FixedAsset;
-import com.resendegabriel.investmentscontrolapi.model.dto.FixedAssetRequest;
-import com.resendegabriel.investmentscontrolapi.model.dto.FixedAssetResponse;
-import com.resendegabriel.investmentscontrolapi.model.dto.FixedAssetUpdate;
+import com.resendegabriel.investmentscontrolapi.model.dto.fixedAsset.FixedAssetRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.fixedAsset.FixedAssetResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.fixedAsset.FixedAssetUpdate;
 import com.resendegabriel.investmentscontrolapi.repository.FixedAssetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
