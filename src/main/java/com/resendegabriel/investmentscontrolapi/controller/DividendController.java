@@ -1,5 +1,11 @@
 package com.resendegabriel.investmentscontrolapi.controller;
 
+import com.resendegabriel.investmentscontrolapi.controller.docs.dividend.DeleteDividendDoc;
+import com.resendegabriel.investmentscontrolapi.controller.docs.dividend.DividendUpdateDoc;
+import com.resendegabriel.investmentscontrolapi.controller.docs.dividend.GetDividendByAssetCodeDoc;
+import com.resendegabriel.investmentscontrolapi.controller.docs.dividend.GetDividendByWalletIdDoc;
+import com.resendegabriel.investmentscontrolapi.controller.docs.dividend.GetDividendDoc;
+import com.resendegabriel.investmentscontrolapi.controller.docs.dividend.SaveDividendDoc;
 import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendRequest;
 import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendResponse;
 import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendUpdate;
@@ -29,6 +35,7 @@ public class DividendController {
     @Autowired
     private DividendService dividendService;
 
+    @SaveDividendDoc
     @PostMapping
     public ResponseEntity<DividendResponse> save(@RequestBody @Valid DividendRequest dividendRequest) {
         log.info("[POST - DIVIDEND] - start");
@@ -37,6 +44,7 @@ public class DividendController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+    @DividendUpdateDoc
     @PutMapping("/{dividendId}")
     public ResponseEntity<DividendResponse> update(@PathVariable Long dividendId, @RequestBody @Valid DividendUpdate dividendUpdate) {
         log.info("[PUT - DIVIDEND] - start");
@@ -45,6 +53,7 @@ public class DividendController {
         return ResponseEntity.ok().body(response);
     }
 
+    @GetDividendDoc
     @GetMapping("/{dividendId}")
     public ResponseEntity<DividendResponse> getById(@PathVariable Long dividendId) {
         log.info("[GET - DIVIDEND] - start");
@@ -53,6 +62,7 @@ public class DividendController {
         return ResponseEntity.ok().body(response);
     }
 
+    @GetDividendByAssetCodeDoc
     @GetMapping("/asset")
     public ResponseEntity<List<DividendResponse>> getByAssetCode(@RequestParam String code) {
         log.info("[GET - DIVIDEND BY CODE] - start");
@@ -61,6 +71,7 @@ public class DividendController {
         return ResponseEntity.ok().body(response);
     }
 
+    @GetDividendByWalletIdDoc
     @GetMapping("/wallet/{walletId}")
     public ResponseEntity<List<DividendResponse>> getByAssetCode(@PathVariable Long walletId) {
         log.info("[GET - DIVIDEND BY WALLET] - start");
@@ -70,6 +81,7 @@ public class DividendController {
     }
 
 
+    @DeleteDividendDoc
     @DeleteMapping("/{dividendId}")
     public ResponseEntity<Void> deleteById(@PathVariable Long dividendId) {
         log.info("[DELETE - DIVIDEND] - start");
