@@ -1,7 +1,7 @@
 package com.resendegabriel.investmentscontrolapi.model;
 
-import com.resendegabriel.investmentscontrolapi.model.dto.DividendRequest;
-import com.resendegabriel.investmentscontrolapi.model.dto.DividendUpdate;
+import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendUpdate;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

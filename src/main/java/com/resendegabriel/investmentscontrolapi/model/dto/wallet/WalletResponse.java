@@ -1,7 +1,9 @@
-package com.resendegabriel.investmentscontrolapi.model.dto;
+package com.resendegabriel.investmentscontrolapi.model.dto.wallet;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.resendegabriel.investmentscontrolapi.model.Wallet;
+import com.resendegabriel.investmentscontrolapi.model.dto.fixedAsset.FixedAssetResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.variableAsset.VariableAssetResponse;
 import lombok.Builder;
 
 import java.math.BigDecimal;

@@ -1,7 +1,7 @@
 package com.resendegabriel.investmentscontrolapi.model;
 
-import com.resendegabriel.investmentscontrolapi.model.dto.VariableAssetRequest;
-import com.resendegabriel.investmentscontrolapi.model.dto.VariableAssetUpdate;
+import com.resendegabriel.investmentscontrolapi.model.dto.variableAsset.VariableAssetRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.variableAsset.VariableAssetUpdate;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

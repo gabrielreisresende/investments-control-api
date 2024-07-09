@@ -1,6 +1,6 @@
 package com.resendegabriel.investmentscontrolapi.model;
 
-import com.resendegabriel.investmentscontrolapi.model.dto.WalletRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.wallet.WalletRequest;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
