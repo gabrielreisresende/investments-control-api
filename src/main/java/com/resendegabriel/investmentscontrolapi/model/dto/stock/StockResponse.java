@@ -1,4 +1,4 @@
-package com.resendegabriel.investmentscontrolapi.model.dto;
+package com.resendegabriel.investmentscontrolapi.model.dto.stock;
 
 import com.resendegabriel.investmentscontrolapi.model.Stock;
 import lombok.Builder;

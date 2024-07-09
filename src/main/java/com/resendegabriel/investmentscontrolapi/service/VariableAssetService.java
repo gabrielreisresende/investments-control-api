@@ -1,13 +1,12 @@
 package com.resendegabriel.investmentscontrolapi.service;
 
 import com.resendegabriel.investmentscontrolapi.model.VariableAsset;
-import com.resendegabriel.investmentscontrolapi.model.dto.VariableAssetRequest;
-import com.resendegabriel.investmentscontrolapi.model.dto.VariableAssetResponse;
-import com.resendegabriel.investmentscontrolapi.model.dto.VariableAssetUpdate;
+import com.resendegabriel.investmentscontrolapi.model.dto.variableAsset.VariableAssetRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.variableAsset.VariableAssetResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.variableAsset.VariableAssetUpdate;
 import com.resendegabriel.investmentscontrolapi.repository.VariableAssetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.NoSuchElementException;
 

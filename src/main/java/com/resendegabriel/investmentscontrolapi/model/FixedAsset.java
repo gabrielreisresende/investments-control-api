@@ -1,7 +1,7 @@
 package com.resendegabriel.investmentscontrolapi.model;
 
-import com.resendegabriel.investmentscontrolapi.model.dto.FixedAssetRequest;
-import com.resendegabriel.investmentscontrolapi.model.dto.FixedAssetUpdate;
+import com.resendegabriel.investmentscontrolapi.model.dto.fixedAsset.FixedAssetRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.fixedAsset.FixedAssetUpdate;
 import com.resendegabriel.investmentscontrolapi.model.enums.FixedAssetType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

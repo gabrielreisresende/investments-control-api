@@ -1,9 +1,9 @@
 package com.resendegabriel.investmentscontrolapi.service;
 
 import com.resendegabriel.investmentscontrolapi.model.Dividend;
-import com.resendegabriel.investmentscontrolapi.model.dto.DividendRequest;
-import com.resendegabriel.investmentscontrolapi.model.dto.DividendResponse;
-import com.resendegabriel.investmentscontrolapi.model.dto.DividendUpdate;
+import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendUpdate;
 import com.resendegabriel.investmentscontrolapi.repository.DividendRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

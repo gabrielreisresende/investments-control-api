@@ -4,9 +4,9 @@ import com.resendegabriel.investmentscontrolapi.controller.docs.fixedAsset.AddFi
 import com.resendegabriel.investmentscontrolapi.controller.docs.fixedAsset.DeleteFixedAssetDoc;
 import com.resendegabriel.investmentscontrolapi.controller.docs.fixedAsset.GetFixedAssetDoc;
 import com.resendegabriel.investmentscontrolapi.controller.docs.fixedAsset.UpdateFixedAssetDoc;
-import com.resendegabriel.investmentscontrolapi.model.dto.FixedAssetRequest;
-import com.resendegabriel.investmentscontrolapi.model.dto.FixedAssetResponse;
-import com.resendegabriel.investmentscontrolapi.model.dto.FixedAssetUpdate;
+import com.resendegabriel.investmentscontrolapi.model.dto.fixedAsset.FixedAssetRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.fixedAsset.FixedAssetResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.fixedAsset.FixedAssetUpdate;
 import com.resendegabriel.investmentscontrolapi.service.FixedAssetService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;

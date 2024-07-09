@@ -1,4 +1,4 @@
-package com.resendegabriel.investmentscontrolapi.model.dto;
+package com.resendegabriel.investmentscontrolapi.model.dto.wallet;
 
 import jakarta.validation.constraints.NotBlank;
 

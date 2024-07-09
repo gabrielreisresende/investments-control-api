@@ -6,9 +6,9 @@ import com.resendegabriel.investmentscontrolapi.controller.docs.dividend.GetDivi
 import com.resendegabriel.investmentscontrolapi.controller.docs.dividend.GetDividendByWalletIdDoc;
 import com.resendegabriel.investmentscontrolapi.controller.docs.dividend.GetDividendDoc;
 import com.resendegabriel.investmentscontrolapi.controller.docs.dividend.SaveDividendDoc;
-import com.resendegabriel.investmentscontrolapi.model.dto.DividendRequest;
-import com.resendegabriel.investmentscontrolapi.model.dto.DividendResponse;
-import com.resendegabriel.investmentscontrolapi.model.dto.DividendUpdate;
+import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendUpdate;
 import com.resendegabriel.investmentscontrolapi.service.DividendService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
