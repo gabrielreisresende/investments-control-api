@@ -61,6 +61,15 @@ public class DividendController {
         return ResponseEntity.ok().body(response);
     }
 
+    @GetMapping("/wallet/{walletId}")
+    public ResponseEntity<List<DividendResponse>> getByAssetCode(@PathVariable Long walletId) {
+        log.info("[GET - DIVIDEND BY WALLET] - start");
+        var response = dividendService.getByWalletId(walletId);
+        log.info("[GET - DIVIDEND BY WALLET] - end");
+        return ResponseEntity.ok().body(response);
+    }
+
+
     @DeleteMapping("/{dividendId}")
     public ResponseEntity<Void> deleteById(@PathVariable Long dividendId) {
         log.info("[DELETE - DIVIDEND] - start");

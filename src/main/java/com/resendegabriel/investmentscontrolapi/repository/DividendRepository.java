@@ -8,4 +8,6 @@ import java.util.List;
 public interface DividendRepository extends JpaRepository<Dividend, Long> {
 
     List<Dividend> findAllByVariableAssetStockCode(String code);
+
+    List<Dividend> findAllByVariableAssetWalletId(Long walletId);
 }

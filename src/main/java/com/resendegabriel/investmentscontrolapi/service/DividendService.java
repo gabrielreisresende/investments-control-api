@@ -48,6 +48,15 @@ public class DividendService {
         return DividendResponse.fromEntityList(dividends);
     }
 
+    public List<DividendResponse> getByWalletId(Long walletId) {
+        var dividends = dividendRepository.findAllByVariableAssetWalletId(walletId);
+
+        if (dividends.isEmpty())
+            throw new NoSuchElementException("Nenhum dividendo encontrado para essa carteira de Id: " + walletId);
+
+        return DividendResponse.fromEntityList(dividends);
+    }
+
     public void deleteById(Long dividendId) {
         findById(dividendId);
         dividendRepository.deleteById(dividendId);
