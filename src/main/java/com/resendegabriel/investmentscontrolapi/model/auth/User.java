@@ -1,6 +1,7 @@
-package com.resendegabriel.investmentscontrolapi.model;
+package com.resendegabriel.investmentscontrolapi.model.auth;
 
-import com.resendegabriel.investmentscontrolapi.enums.Role;
+import com.resendegabriel.investmentscontrolapi.model.Wallet;
+import com.resendegabriel.investmentscontrolapi.model.dto.user.UserRequest;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -17,6 +18,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.Collection;
 import java.util.List;
@@ -38,11 +40,20 @@ public class User implements UserDetails {
 
     private String password;
 
-    @OneToMany(cascade = CascadeType.REMOVE)
+    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "user")
     private List<Wallet> wallets;
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    public static User fromRequest(UserRequest userRequest) {
+        String encryptedPassword = new BCryptPasswordEncoder().encode(userRequest.password());
+        return User.builder()
+                .email(userRequest.email())
+                .password(encryptedPassword)
+                .role(Role.USER)
+                .build();
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -62,21 +73,21 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return UserDetails.super.isAccountNonExpired();
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return UserDetails.super.isAccountNonLocked();
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return UserDetails.super.isCredentialsNonExpired();
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return UserDetails.super.isEnabled();
+        return true;
     }
 }
