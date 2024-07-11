@@ -1,9 +1,8 @@
 package com.resendegabriel.investmentscontrolapi.controller.docs.fixedAsset;
 
 import com.resendegabriel.investmentscontrolapi.exception.StandardError;
-import com.resendegabriel.investmentscontrolapi.model.dto.stock.StockResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.fixedAsset.FixedAssetResponse;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -26,13 +25,17 @@ import java.lang.annotation.Target;
                 description = "Retorna os dados de um ativo de renda fixa",
                 content = @Content(
                         mediaType = "application/json",
-                        array = @ArraySchema(schema = @Schema(implementation = StockResponse.class)))),
+                        schema = @Schema(implementation = FixedAssetResponse.class))),
         @ApiResponse(
                 responseCode = "400",
                 description = "Requisição Inválida",
                 content = @Content(
                         mediaType = "application/json",
                         schema = @Schema(implementation = StandardError.class))),
+        @ApiResponse(
+                responseCode = "403",
+                description = "Acesso nao autorizado",
+                content = @Content(schema = @Schema(hidden = true))),
         @ApiResponse(
                 responseCode = "404",
                 description = "Recurso não encontrado",

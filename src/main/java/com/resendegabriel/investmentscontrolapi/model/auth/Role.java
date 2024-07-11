@@ -1,4 +1,4 @@
-package com.resendegabriel.investmentscontrolapi.enums;
+package com.resendegabriel.investmentscontrolapi.model.auth;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

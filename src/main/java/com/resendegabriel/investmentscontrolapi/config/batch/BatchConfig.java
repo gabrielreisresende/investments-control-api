@@ -1,4 +1,4 @@
-package com.resendegabriel.investmentscontrolapi.config;
+package com.resendegabriel.investmentscontrolapi.config.batch;
 
 import com.resendegabriel.investmentscontrolapi.batch.RestStockReader;
 import com.resendegabriel.investmentscontrolapi.batch.StockWriter;
