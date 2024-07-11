@@ -9,6 +9,7 @@ import lombok.Builder;
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Builder
 public record WalletResponse(Long id,
@@ -39,5 +40,11 @@ public record WalletResponse(Long id,
                 .fixedAssets(FixedAssetResponse.fromEntityList(
                         entity.getFixedAssets() != null ? entity.getFixedAssets() : Collections.emptyList()))
                 .build();
+    }
+
+    public static List<WalletResponse> fromEntityList(List<Wallet> wallets) {
+        return wallets.stream()
+                .map(WalletResponse::fromEntity)
+                .collect(Collectors.toList());
     }
 }
