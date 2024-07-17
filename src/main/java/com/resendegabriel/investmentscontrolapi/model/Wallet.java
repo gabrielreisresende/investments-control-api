@@ -1,11 +1,13 @@
 package com.resendegabriel.investmentscontrolapi.model;
 
+import com.resendegabriel.investmentscontrolapi.model.auth.User;
 import com.resendegabriel.investmentscontrolapi.model.dto.wallet.WalletRequest;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.PostLoad;
 import jakarta.persistence.PostPersist;
@@ -46,31 +48,39 @@ public class Wallet {
     private BigDecimal fixedAssetsValue;
 
     @OneToMany(mappedBy = "wallet", cascade = CascadeType.REMOVE)
-    List<VariableAsset> variableAssets;
+    private List<VariableAsset> variableAssets;
 
     @OneToMany(mappedBy = "wallet", cascade = CascadeType.REMOVE)
-    List<FixedAsset> fixedAssets;
+    private List<FixedAsset> fixedAssets;
+
+    @ManyToOne
+    private User user;
 
     @PostLoad
     @PostUpdate
     @PostPersist
     private void calculateTotalValues() {
-        this.variableAssetsValue = BigDecimal.valueOf(variableAssets.stream()
-                .map(VariableAsset::getTotalValue)
-                .mapToDouble(BigDecimal::doubleValue)
-                .sum());
+        this.variableAssetsValue = variableAssets != null ?
+                BigDecimal.valueOf(variableAssets.stream()
+                        .map(VariableAsset::getTotalValue)
+                        .mapToDouble(BigDecimal::doubleValue)
+                        .sum())
+                : BigDecimal.ZERO;
 
-        this.fixedAssetsValue = BigDecimal.valueOf(fixedAssets.stream()
-                .map(FixedAsset::getCurrentValue)
-                .mapToDouble(BigDecimal::doubleValue)
-                .sum());
+        this.fixedAssetsValue = fixedAssets != null?
+                BigDecimal.valueOf(fixedAssets.stream()
+                        .map(FixedAsset::getCurrentValue)
+                        .mapToDouble(BigDecimal::doubleValue)
+                        .sum())
+                : BigDecimal.ZERO;
 
         this.totalValue = variableAssetsValue.add(fixedAssetsValue);
     }
 
-    public static Wallet fromRequest(WalletRequest walletRequest) {
+    public static Wallet fromRequest(WalletRequest walletRequest, User user) {
         return Wallet.builder()
                 .name(walletRequest.name())
+                .user(user)
                 .build();
     }
 

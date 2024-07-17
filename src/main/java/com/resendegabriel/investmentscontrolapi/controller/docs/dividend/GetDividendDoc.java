@@ -1,9 +1,8 @@
 package com.resendegabriel.investmentscontrolapi.controller.docs.dividend;
 
 import com.resendegabriel.investmentscontrolapi.exception.StandardError;
-import com.resendegabriel.investmentscontrolapi.model.dto.StockResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.divedend.DividendResponse;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -26,13 +25,17 @@ import java.lang.annotation.Target;
                 description = "Retorna os dados de um dividendo",
                 content = @Content(
                         mediaType = "application/json",
-                        array = @ArraySchema(schema = @Schema(implementation = StockResponse.class)))),
+                        schema = @Schema(implementation = DividendResponse.class))),
         @ApiResponse(
                 responseCode = "400",
                 description = "Requisição Inválida",
                 content = @Content(
                         mediaType = "application/json",
                         schema = @Schema(implementation = StandardError.class))),
+        @ApiResponse(
+                responseCode = "403",
+                description = "Acesso nao autorizado",
+                content = @Content(schema = @Schema(hidden = true))),
         @ApiResponse(
                 responseCode = "404",
                 description = "Recurso não encontrado",

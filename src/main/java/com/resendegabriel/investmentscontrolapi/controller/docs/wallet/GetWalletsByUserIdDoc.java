@@ -1,8 +1,7 @@
-package com.resendegabriel.investmentscontrolapi.controller.docs.variableAsset;
+package com.resendegabriel.investmentscontrolapi.controller.docs.wallet;
 
 import com.resendegabriel.investmentscontrolapi.exception.StandardError;
-import com.resendegabriel.investmentscontrolapi.model.dto.stock.StockResponse;
-import com.resendegabriel.investmentscontrolapi.model.dto.variableAsset.VariableAssetResponse;
+import com.resendegabriel.investmentscontrolapi.model.dto.wallet.WalletResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -19,15 +18,15 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Operation(
-        summary = "Busca um ativo de renda variável",
-        description = "Busca um ativo de renda variável pelo seu id")
+        summary = "Busca todas carteiras de investimentos de um usuario",
+        description = "Busca todas as carteiras de investimento por meio do id do usuario")
 @ApiResponses(value = {
         @ApiResponse(
                 responseCode = "200",
-                description = "Retorna os dados de um ativo de renda variável",
+                description = "Retorna uma lista com todas as carteiras de invetimento de um usuario",
                 content = @Content(
                         mediaType = "application/json",
-                        schema = @Schema(implementation = VariableAssetResponse.class))),
+                        array = @ArraySchema(schema = @Schema(implementation = WalletResponse.class)))),
         @ApiResponse(
                 responseCode = "400",
                 description = "Requisição Inválida",
@@ -51,5 +50,5 @@ import java.lang.annotation.Target;
                         mediaType = "application/json",
                         schema = @Schema(implementation = StandardError.class)))
 })
-public @interface GetVariableAssetDoc {
+public @interface GetWalletsByUserIdDoc {
 }

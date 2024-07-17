@@ -1,6 +1,7 @@
 package com.resendegabriel.investmentscontrolapi.controller;
 
 import com.resendegabriel.investmentscontrolapi.controller.docs.wallet.DeleteWalletDoc;
+import com.resendegabriel.investmentscontrolapi.controller.docs.wallet.GetWalletsByUserIdDoc;
 import com.resendegabriel.investmentscontrolapi.controller.docs.wallet.GetWalletDoc;
 import com.resendegabriel.investmentscontrolapi.controller.docs.wallet.WalletCreationDoc;
 import com.resendegabriel.investmentscontrolapi.controller.docs.wallet.WalletUpdateDoc;
@@ -20,6 +21,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -64,5 +67,14 @@ public class WalletController {
         walletService.deleteById(id);
         log.info("[DELETE - WALLET] - end");
         return ResponseEntity.noContent().build();
+    }
+
+    @GetWalletsByUserIdDoc
+    @GetMapping("/users/{userId}")
+    public ResponseEntity<List<WalletResponse>> getByUserId(@PathVariable Long userId) {
+        log.info("[GET - WALLETS BY USER ID] - start");
+        var response = walletService.getByUserId(userId);
+        log.info("[GET - WALLETS BY USER ID] - end");
+        return ResponseEntity.ok().body(response);
     }
 }
