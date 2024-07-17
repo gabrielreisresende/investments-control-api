@@ -2,6 +2,7 @@ package com.resendegabriel.investmentscontrolapi.model.auth;
 
 import com.resendegabriel.investmentscontrolapi.model.Wallet;
 import com.resendegabriel.investmentscontrolapi.model.dto.user.UserRequest;
+import com.resendegabriel.investmentscontrolapi.model.dto.user.UserUpdateRequest;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -53,6 +54,10 @@ public class User implements UserDetails {
                 .password(encryptedPassword)
                 .role(Role.USER)
                 .build();
+    }
+
+    public void updateData(UserUpdateRequest userRequest) {
+        this.email = userRequest.email() != null ? userRequest.email() : this.email;
     }
 
     @Override
