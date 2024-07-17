@@ -1,4 +1,4 @@
-package com.resendegabriel.investmentscontrolapi.controller.docs.auth;
+package com.resendegabriel.investmentscontrolapi.controller.docs.user;
 
 import com.resendegabriel.investmentscontrolapi.exception.StandardError;
 import com.resendegabriel.investmentscontrolapi.model.dto.user.UserResponse;
@@ -16,12 +16,12 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Operation(
-        summary = "Cadastrar um novo usuario",
-        description = "Cadastra um novo usuario na aplicacao.")
+        summary = "Atualiza os dados de um usuario",
+        description = "Atualiza o email de um usuario")
 @ApiResponses(value = {
         @ApiResponse(
-                responseCode = "201",
-                description = "Usuario cadastrado com sucesso",
+                responseCode = "200",
+                description = "Dados do usuario atualizados com sucesso",
                 content = @Content(
                         mediaType = "application/json",
                         schema = @Schema(implementation = UserResponse.class))),
@@ -31,6 +31,10 @@ import java.lang.annotation.Target;
                 content = @Content(
                         mediaType = "application/json",
                         schema = @Schema(implementation = StandardError.class))),
+        @ApiResponse(
+                responseCode = "403",
+                description = "Acesso nao autorizado",
+                content = @Content(schema = @Schema(hidden = true))),
         @ApiResponse(
                 responseCode = "404",
                 description = "Recurso não encontrado",
@@ -44,5 +48,5 @@ import java.lang.annotation.Target;
                         mediaType = "application/json",
                         schema = @Schema(implementation = StandardError.class)))
 })
-public @interface UserRegisterDoc {
+public @interface UserUpdateDoc {
 }

@@ -35,13 +35,7 @@ import org.springframework.context.annotation.Configuration;
                 scheme = "bearer",
                 bearerFormat = "JWT",
                 description = "Put your token JWT received in the login response to be able to access all endpoints."
-        ),
-        @SecurityScheme(
-                name = "Basic Auth",
-                type = SecuritySchemeType.HTTP,
-                scheme = "basic",
-                bearerFormat = "Basic",
-                description = "Put your user credentials (email and password) to be able to log in the application. This authentication is used to encrypt the user data in the log in process."
-        )})
+        )
+})
 public class SwaggerConfig {
 }
